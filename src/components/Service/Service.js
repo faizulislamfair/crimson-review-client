@@ -3,7 +3,7 @@ import './Service.css';
 import { Link } from 'react-router-dom';
 
 const Service = ({ service }) => {
-    const { name, image, price, description } = service;
+    const { _id, name, image, price, description } = service;
 
 
     return (
@@ -24,7 +24,7 @@ const Service = ({ service }) => {
                     }
 
                 </h3>
-                <Link to={`/course/${id}`}><button className='btn btn-primary'>View Details</button></Link>
+                <Link to={`/service/${_id}`}><button className='btn btn-primary'>View Details</button></Link>
             </div>
         </div>
     );
