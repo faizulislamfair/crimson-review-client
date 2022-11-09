@@ -1,16 +1,18 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Service from './../Service/Service';
+import './Services.css';
 
 const Services = () => {
     const services = useLoaderData();
 
     return (
-        <div>
-            {
-                services.map(service => <p key={service._id}>
-                    {service.name}
-                </p>)
-            }
+        <div className="container">
+            <div className="cards">
+                {
+                    services.map(service => <Service key={service._id} service={service}></Service>)
+                }
+            </div>
         </div>
     );
 };

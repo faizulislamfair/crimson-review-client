@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData, Link } from 'react-router-dom';
 import './Home.css';
 import Slider from './../Slider/Slider';
+import Service from './../Service/Service';
 
 const Home = () => {
 
@@ -12,11 +13,16 @@ const Home = () => {
             <Slider></Slider>
             <div className='mt-5'>
                 <h3>Services</h3>
-                {
-                    services.map(service => <p key={service._id}>
-                        {service.name}
-                    </p>)
-                }
+
+                <div className="container">
+                    <div className="cards">
+                        {
+                            services.map(service => <Service key={service._id} service={service}></Service>)
+                        }
+                    </div>
+                </div>
+
+
             </div>
 
             <Link to='/services'><button>See All</button></Link>
