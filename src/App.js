@@ -5,6 +5,8 @@ import Home from './components/Home/Home';
 import Blog from './components/Blog/Blog';
 import Services from './components/Services/Services';
 import ServiceDetails from './components/ServiceDetails/ServiceDetails';
+import Login from './components/Login/Login';
+import SignUp from './components/SignUp/SignUp';
 
 function App() {
 
@@ -31,6 +33,14 @@ function App() {
           element: <ServiceDetails></ServiceDetails>
         },
         { path: '/blog', element: <Blog></Blog> },
+        {
+          path: '/login',
+          element: <Login></Login>
+        },
+        {
+          path: '/signup',
+          element: <SignUp></SignUp>
+        }
       ]
     }
   ])
