@@ -1,9 +1,17 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const Home = () => {
+
+    const services = useLoaderData();
+
     return (
         <div>
-            Fair Online Delivery Service Review
+            {
+                services.map(service => <p key={service._id}>
+                    {service.name}
+                </p>)
+            }
         </div>
     );
 };
