@@ -4,7 +4,7 @@ import { AuthContext } from './../../contexts/UserContext';
 
 const Header = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
 
     return (
@@ -19,8 +19,16 @@ const Header = () => {
                         <Link className="nav-link text-black" aria-current="page" to="/"><h5>Home</h5></Link>
                         <Link className="nav-link text-black" aria-current="page" to="/services"><h5>Services</h5></Link>
                         <Link className="nav-link text-black" to="/blog"><h5>Blog</h5></Link>
-                        <Link className="nav-link text-black" to="/login"><h5>Login</h5></Link>
-                        <Link className="nav-link text-black" to="/signup"><h5>Sign Up</h5></Link>
+                        {
+                            user?.uid ?
+                                <Link className="nav-link text-black" onClick={logOut}><h5>Logout</h5></Link>
+                                :
+                                <>
+                                    <Link className="nav-link text-black" to="/login"><h5>Login</h5></Link>
+                                    <Link className="nav-link text-black" to='/signup'><h5>Sign Up</h5></Link>
+
+                                </>
+                        }
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import { FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { AuthContext } from './../../contexts/UserContext';
 
@@ -9,6 +9,8 @@ const Login = () => {
 
 
     const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+
 
 
     const handleSubmit = (event) => {
@@ -21,6 +23,8 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                form.reset();
+                navigate('/');
             })
             .catch(error => console.error(error));
 
