@@ -1,3 +1,9 @@
+.text-error {
+    background-color: aliceblue;
+    color: crimson;
+}
+
+
 .form-container-signup {
     background-color: #FFFFFF;
     width: 500px;
