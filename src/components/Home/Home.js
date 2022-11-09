@@ -3,6 +3,7 @@ import { useLoaderData, Link } from 'react-router-dom';
 import './Home.css';
 import Slider from './../Slider/Slider';
 import Service from './../Service/Service';
+import Vehicles from './../Vehicles/Vehicles';
 
 const Home = () => {
 
@@ -26,6 +27,8 @@ const Home = () => {
             </div>
 
             <Link to='/services'><button className='btn btn-success'><h5>See All Services</h5></button></Link>
+
+            <Vehicles></Vehicles>
 
         </div >
     );
