@@ -8,6 +8,9 @@ import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
 import RouteNotFound from './routes/RouteNotFound/RouteNotFound';
+import MyReviews from './components/MyReviews/MyReviews';
+import AddService from './components/AddService/AddService';
+import PrivateRoute from './routes/PrivateRoute/PrivateRoute';
 
 function App() {
 
@@ -41,6 +44,14 @@ function App() {
         {
           path: '/signup',
           element: <SignUp></SignUp>
+        },
+        {
+          path: '/my_reviews',
+          element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
+        },
+        {
+          path: '/add_service',
+          element: <PrivateRoute><AddService></AddService></PrivateRoute>
         }
       ]
     },

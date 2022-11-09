@@ -21,7 +21,11 @@ const Header = () => {
                         <Link className="nav-link text-black" to="/blog"><h5>Blog</h5></Link>
                         {
                             user?.uid ?
-                                <Link className="nav-link text-black" onClick={logOut}><h5>Logout</h5></Link>
+                                <>
+                                    <Link className="nav-link text-black" to='/my_reviews'><h5>My Reviews</h5></Link>
+                                    <Link className="nav-link text-black" to='/add_service'><h5>Add Service</h5></Link>
+                                    <Link className="nav-link text-black" onClick={logOut}><h5>Logout</h5></Link>
+                                </>
                                 :
                                 <>
                                     <Link className="nav-link text-black" to="/login"><h5>Login</h5></Link>
