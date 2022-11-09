@@ -1,0 +1,10 @@
+.jumbotron {
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    background-color: #95A0A7;
+    color: #ffffff;
+    text-align: center;
+    border: 2px solid #95A0A7;
+    border-radius: 20px;
+}

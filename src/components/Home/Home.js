@@ -4,6 +4,7 @@ import './Home.css';
 import Slider from './../Slider/Slider';
 import Service from './../Service/Service';
 import Vehicles from './../Vehicles/Vehicles';
+import Contact from './../Contact/Contact';
 
 const Home = () => {
 
@@ -29,6 +30,8 @@ const Home = () => {
             <Link to='/services'><button className='btn btn-success'><h5>See All Services</h5></button></Link>
 
             <Vehicles></Vehicles>
+
+            <Contact></Contact>
 
         </div >
     );
