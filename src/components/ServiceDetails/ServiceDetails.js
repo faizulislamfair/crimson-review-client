@@ -8,11 +8,14 @@ const ServiceDetails = () => {
     const { name, image, price, description } = service;
 
     return (
-        <div className='text-center mt-5 detail p-5'>
-            <h2><b>Name:</b> {name}</h2>
-            <img src={image} alt="" />
-            <h3><b>Price:</b> {price}</h3>
-            <h3><b>Detailed Description:</b> {description}</h3>
+        <div className="container">
+            <h1 className='mt-5'>Services Section</h1>
+            <div className='text-center detail p-2'>
+                <h2><b>Name:</b> {name}</h2>
+                <img src={image} alt="" />
+                <h3><b>Price:</b> {price}</h3>
+                <h3><b>Detailed Description:</b> {description}</h3>
+            </div>
         </div>
     );
 };

@@ -1,4 +1,4 @@
 .detail {
-    border: 2px solid goldenrod;
-    border-radius: 15px;
+    margin: 0;
+    overflow-x: hidden;
 }

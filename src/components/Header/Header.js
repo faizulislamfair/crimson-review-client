@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <nav className="navbar navbar-expand-lg bg-light">
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/"><b>Fair Online Delivery Service Review</b></Link>
+                <Link className="navbar-brand" to="/"><img src="favicon.webp" style={{ width: '27px', height: '27px', transform: 'translateY(-5px)' }} alt='logo' /><b> Fair Online Delivery Service Review</b></Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

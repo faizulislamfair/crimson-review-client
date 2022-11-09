@@ -25,9 +25,9 @@ const Home = () => {
 
             </div>
 
-            <Link to='/services'><button>See All</button></Link>
+            <Link to='/services'><button className='btn btn-success'><h5>See All Services</h5></button></Link>
 
-        </div>
+        </div >
     );
 };
 
