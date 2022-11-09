@@ -7,6 +7,7 @@ import Services from './components/Services/Services';
 import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
+import RouteNotFound from './routes/RouteNotFound/RouteNotFound';
 
 function App() {
 
@@ -42,7 +43,8 @@ function App() {
           element: <SignUp></SignUp>
         }
       ]
-    }
+    },
+    { path: '*', element: <RouteNotFound></RouteNotFound> }
   ])
 
 
