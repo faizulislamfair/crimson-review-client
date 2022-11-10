@@ -26,7 +26,7 @@ const ServiceDetails = ({ reviewSingle }) => {
         event.preventDefault();
 
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://fair-online-delivery-service-review-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -61,7 +61,7 @@ const ServiceDetails = ({ reviewSingle }) => {
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?service_id=${review?.service_id}`)
+        fetch(`https://fair-online-delivery-service-review-server.vercel.app/reviews?service_id=${review?.service_id}`)
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [review?.service_id])
