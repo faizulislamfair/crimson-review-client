@@ -5,7 +5,8 @@ import { useLoaderData, Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 import './ServiceDetails.css'
 
-const ServiceDetails = () => {
+const ServiceDetails = ({ reviewSingle }) => {
+    console.log(reviewSingle);
 
     const service = useLoaderData();
 
@@ -13,6 +14,8 @@ const ServiceDetails = () => {
     const { name, image, price, description } = service;
 
     const [review, setReview] = useState({});
+    console.log(review);
+
 
 
     const { user } = useContext(AuthContext);
@@ -21,7 +24,6 @@ const ServiceDetails = () => {
 
     const handleAddReview = event => {
         event.preventDefault();
-        console.log(review);
 
 
         fetch('http://localhost:5000/reviews', {
@@ -50,7 +52,8 @@ const ServiceDetails = () => {
         const email = user?.email;
         const photoURL = user?.photoURL;
         const service_name = service.name;
-        const newReview = { name, email, photoURL, service_name, ...review }
+        const service_id = service._id;
+        const newReview = { name, email, photoURL, service_name, service_id, ...review }
         newReview[field] = value;
         setReview(newReview);
     }
@@ -58,10 +61,10 @@ const ServiceDetails = () => {
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?service_name=${review?.service_name}`)
+        fetch(`http://localhost:5000/reviews?service_id=${review?.service_id}`)
             .then(res => res.json())
             .then(data => setReviews(data))
-    }, [review?.service_name])
+    }, [review?.service_id])
 
     console.log(reviews);
 

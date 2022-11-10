@@ -11,6 +11,7 @@ import RouteNotFound from './routes/RouteNotFound/RouteNotFound';
 import MyReviews from './components/MyReviews/MyReviews';
 import AddService from './components/AddService/AddService';
 import PrivateRoute from './routes/PrivateRoute/PrivateRoute';
+import ReviewById from './components/ReviewById/ReviewById';
 
 function App() {
 
@@ -34,6 +35,11 @@ function App() {
           loader: async ({ params }) => {
             return fetch(`http://localhost:5000/service/${params.id}`);
           },
+          element: <ServiceDetails></ServiceDetails>
+        },
+        {
+          path: '/service/:id',
+          loader: () => fetch(`http://localhost:5000/reviews`),
           element: <ServiceDetails></ServiceDetails>
         },
         { path: '/blog', element: <Blog></Blog> },
