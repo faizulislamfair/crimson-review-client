@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/UserContext';
 import { useLoaderData } from 'react-router-dom';
 import './MyReviews.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const MyReviews = () => {
@@ -33,7 +35,7 @@ const MyReviews = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('Review deleted successfully!');
+                        toast("Review Deleted Successfully!");
                         const remainingReviews = displayReviews.filter(rev => rev._id !== review._id);
                         setDisplayReviews(remainingReviews);
                     }
@@ -70,6 +72,7 @@ const MyReviews = () => {
             </div>
 
 
+            <ToastContainer />
 
         </div>
     );
