@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { useLoaderData, Link } from 'react-router-dom';
@@ -13,7 +13,6 @@ const ServiceDetails = () => {
     const { name, image, price, description } = service;
 
     const [review, setReview] = useState({});
-
 
 
     const { user } = useContext(AuthContext);
@@ -56,6 +55,16 @@ const ServiceDetails = () => {
         setReview(newReview);
     }
 
+    const [reviews, setReviews] = useState([])
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews?service_name=${review?.service_name}`)
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, [review?.service_name])
+
+    console.log(reviews);
+
 
     return (
         <div className="container">
@@ -70,9 +79,16 @@ const ServiceDetails = () => {
                 <h3><b>Price:</b> {price}</h3>
                 <h3><b>Detailed Description:</b> {description}</h3>
             </div>
+
+
+
             <h1 className='mt-5'><u>Review Section</u></h1>
 
-            {/* <Reviews></Reviews> */}
+            {
+                reviews.length
+            }
+
+
 
             {
                 user?.uid ?

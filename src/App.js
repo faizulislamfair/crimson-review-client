@@ -47,6 +47,7 @@ function App() {
         },
         {
           path: '/my_reviews',
+          loader: () => fetch('http://localhost:5000/reviews'),
           element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
         },
         {
