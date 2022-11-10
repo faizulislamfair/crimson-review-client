@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/UserContext';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, Link } from 'react-router-dom';
 import './MyReviews.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -14,8 +14,7 @@ const MyReviews = () => {
 
 
     const { user } = useContext(AuthContext);
-    // const [reviews, setReviews] = useState([])
-    // console.log(reviews);
+
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?email=${user?.email}`)
@@ -59,7 +58,9 @@ const MyReviews = () => {
                                 <div className="card-title"><b>Service Name:</b> {review.service_name}</div>
                                 <div className='card-text'><b>Review:</b> {review.review}</div>
                                 <br />
-                                <button className='btn btn-warning'>Edit Button</button>
+                                <Link to={`/update/${review._id}`}>
+                                    <button className='btn btn-warning'>Edit Button</button>
+                                </Link>
                                 <br />
                                 <br />
                                 <button className='btn btn-danger' onClick={() => handleDelete(review)}>Delete Button</button>

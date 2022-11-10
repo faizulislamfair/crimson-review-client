@@ -87,9 +87,6 @@ const ServiceDetails = ({ reviewSingle }) => {
 
             <h1 className='mt-5'><u>Review Section</u></h1>
 
-            {
-                reviews.length
-            }
 
 
 

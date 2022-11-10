@@ -11,7 +11,7 @@ import RouteNotFound from './routes/RouteNotFound/RouteNotFound';
 import MyReviews from './components/MyReviews/MyReviews';
 import AddService from './components/AddService/AddService';
 import PrivateRoute from './routes/PrivateRoute/PrivateRoute';
-import ReviewById from './components/ReviewById/ReviewById';
+import Update from './components/Update/Update';
 
 function App() {
 
@@ -55,6 +55,11 @@ function App() {
           path: '/my_reviews',
           loader: () => fetch('http://localhost:5000/reviews'),
           element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
+        },
+        {
+          path: '/update/:id',
+          element: <Update></Update>,
+          loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.id}`)
         },
         {
           path: '/add_service',
