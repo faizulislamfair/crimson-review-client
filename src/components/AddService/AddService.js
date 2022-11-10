@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddService = () => {
 
     const [service, setService] = useState({});
 
+    const notify = () => toast("Service Added Successfully!");
 
     const handleAddService = event => {
         event.preventDefault();
@@ -55,8 +58,9 @@ const AddService = () => {
                 <br />
                 <br />
 
-                <button className='btn btn-primary' type="submit">Add Service</button>
+                <button onClick={notify} className='btn btn-primary' type="submit">Add Service</button>
             </form>
+            <ToastContainer />
         </div>
     );
 };
