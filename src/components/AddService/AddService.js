@@ -23,7 +23,6 @@ const AddService = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    // alert('User Added Successfully');
                     event.target.reset();
                 }
             })
