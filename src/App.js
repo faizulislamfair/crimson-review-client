@@ -12,6 +12,7 @@ import MyReviews from './components/MyReviews/MyReviews';
 import AddService from './components/AddService/AddService';
 import PrivateRoute from './routes/PrivateRoute/PrivateRoute';
 import Update from './components/Update/Update';
+import AllReviews from './components/AllReviews/AllReviews';
 
 function App() {
 
@@ -38,9 +39,9 @@ function App() {
           element: <ServiceDetails></ServiceDetails>
         },
         {
-          path: '/service/:id',
-          loader: () => fetch(`http://localhost:5000/reviews`),
-          element: <ServiceDetails></ServiceDetails>
+          path: '/allreviews',
+          loader: () => fetch('http://localhost:5000/services'),
+          element: <AllReviews></AllReviews>
         },
         { path: '/blog', element: <Blog></Blog> },
         {

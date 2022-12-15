@@ -4,6 +4,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 import { useLoaderData, Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 import './ServiceDetails.css'
+import AllReviews from './../AllReviews/AllReviews';
 
 const ServiceDetails = ({ reviewSingle }) => {
     console.log(reviewSingle);
@@ -58,13 +59,13 @@ const ServiceDetails = ({ reviewSingle }) => {
         setReview(newReview);
     }
 
-    const [reviews, setReviews] = useState([])
+    const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?service_id=${review?.service_id}`)
+        fetch(`http://localhost:5000/reviews`)
             .then(res => res.json())
             .then(data => setReviews(data))
-    }, [review?.service_id])
+    }, [])
 
     console.log(reviews);
 
@@ -86,6 +87,8 @@ const ServiceDetails = ({ reviewSingle }) => {
 
 
             <h1 className='mt-5'><u>Review Section</u></h1>
+
+            <AllReviews></AllReviews>
 
 
 
