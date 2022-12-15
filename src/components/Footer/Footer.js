@@ -9,7 +9,7 @@ const Footer = () => {
     return (
         <footer className="container-fluid bg-dark text-white text-center mt-5 py-5">
 
-            <h3>Fair Online Delivery Service Review</h3>
+            <h3>Crimson Review</h3>
 
             <p>Dhaka, Bangladesh</p>
 

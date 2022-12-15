@@ -23,23 +23,23 @@ function App() {
         {
           path: '/',
           element: <Home></Home>,
-          loader: () => fetch('https://fair-online-delivery-service-review-server.vercel.app/')
+          loader: () => fetch('http://localhost:5000/')
         },
         {
           path: '/services',
           element: <Services></Services>,
-          loader: () => fetch('https://fair-online-delivery-service-review-server.vercel.app/services')
+          loader: () => fetch('http://localhost:5000/services')
         },
         {
           path: '/service/:id',
           loader: async ({ params }) => {
-            return fetch(`https://fair-online-delivery-service-review-server.vercel.app/service/${params.id}`);
+            return fetch(`http://localhost:5000/service/${params.id}`);
           },
           element: <ServiceDetails></ServiceDetails>
         },
         {
           path: '/service/:id',
-          loader: () => fetch(`https://fair-online-delivery-service-review-server.vercel.app/reviews`),
+          loader: () => fetch(`http://localhost:5000/reviews`),
           element: <ServiceDetails></ServiceDetails>
         },
         { path: '/blog', element: <Blog></Blog> },
@@ -53,13 +53,13 @@ function App() {
         },
         {
           path: '/my_reviews',
-          loader: () => fetch('https://fair-online-delivery-service-review-server.vercel.app/reviews'),
+          loader: () => fetch('http://localhost:5000/reviews'),
           element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
         },
         {
           path: '/update/:id',
           element: <Update></Update>,
-          loader: ({ params }) => fetch(`https://fair-online-delivery-service-review-server.vercel.app/reviews/${params.id}`)
+          loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.id}`)
         },
         {
           path: '/add_service',

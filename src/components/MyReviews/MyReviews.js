@@ -17,7 +17,7 @@ const MyReviews = () => {
 
 
     useEffect(() => {
-        fetch(`https://fair-online-delivery-service-review-server.vercel.app/reviews?email=${user?.email}`)
+        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setDisplayReviews(data))
     }, [user?.email])
@@ -28,7 +28,7 @@ const MyReviews = () => {
         if (agree) {
 
 
-            fetch(`https://fair-online-delivery-service-review-server.vercel.app/reviews/${review._id}`, {
+            fetch(`http://localhost:5000/reviews/${review._id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

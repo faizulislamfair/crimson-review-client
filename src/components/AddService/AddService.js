@@ -13,7 +13,7 @@ const AddService = () => {
         console.log(service);
 
 
-        fetch('https://fair-online-delivery-service-review-server.vercel.app/services', {
+        fetch('http://localhost:5000/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

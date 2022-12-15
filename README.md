@@ -2,7 +2,7 @@
 
 <br>
 
-## Live Website Link: [https://fair-online-delivery.firebaseapp.com/](https://fair-online-delivery.firebaseapp.com/)
+## Live Website Link: [https://crimson-review-5aedf.web.app/](https://crimson-review-5aedf.web.app/)
 
 <br>
 

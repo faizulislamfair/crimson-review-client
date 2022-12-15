@@ -12,7 +12,7 @@ const Update = () => {
         event.preventDefault();
         console.log(review);
 
-        fetch(`https://fair-online-delivery-service-review-server.vercel.app/reviews/${reviewed._id}`, {
+        fetch(`http://localhost:5000/reviews/${reviewed._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
