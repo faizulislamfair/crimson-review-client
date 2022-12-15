@@ -4,15 +4,14 @@ import 'react-photo-view/dist/react-photo-view.css';
 import { useLoaderData, Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 import './ServiceDetails.css'
-import AllReviews from './../AllReviews/AllReviews';
 
-const ServiceDetails = ({ reviewSingle }) => {
-    console.log(reviewSingle);
+const ServiceDetails = () => {
 
     const service = useLoaderData();
 
 
-    const { name, image, price, description } = service;
+    const { _id, name, image, price, description } = service;
+    console.log(_id);
 
     const [review, setReview] = useState({});
     console.log(review);
@@ -88,8 +87,11 @@ const ServiceDetails = ({ reviewSingle }) => {
 
             <h1 className='mt-5'><u>Review Section</u></h1>
 
-            <AllReviews></AllReviews>
 
+            {
+
+                reviews.filter(review => (review.service_id === _id)).map(filteredReview => <p key={filteredReview._id}> {filteredReview.service_id} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{filteredReview.review}</p>)
+            }
 
 
 
