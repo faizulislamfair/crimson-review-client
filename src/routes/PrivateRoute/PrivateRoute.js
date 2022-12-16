@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from './../../contexts/UserContext';
-import Spinner from 'react-bootstrap/Spinner';
+import Loading from './../../components/Loading/Loading';
 
 
 const PrivateRoute = ({ children }) => {
@@ -9,12 +9,9 @@ const PrivateRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
 
-
     if (loading) {
         console.log('Loading');
-        return <Spinner animation="border" role="status">
-            <span className="visually-hidden">Loading...</span>
-        </Spinner>
+        return <Loading></Loading>
     }
 
     if (user && user.uid) {
