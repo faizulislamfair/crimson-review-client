@@ -2,7 +2,7 @@
 
 <br>
 
-## Live Website Link: [https://crimson-review-5aedf.web.app/](https://crimson-review-5aedf.web.app/)
+## Live Website Link: [https://crimson-review-5aedf.firebaseapp.com/](https://crimson-review-5aedf.firebaseapp.com/)
 
 <br>
 
