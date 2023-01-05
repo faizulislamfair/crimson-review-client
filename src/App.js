@@ -24,23 +24,23 @@ function App() {
         {
           path: '/',
           element: <Home></Home>,
-          loader: () => fetch('http://localhost:5000/')
+          loader: () => fetch('https://crimson-review-server.vercel.app/')
         },
         {
           path: '/services',
           element: <Services></Services>,
-          loader: () => fetch('http://localhost:5000/services')
+          loader: () => fetch('https://crimson-review-server.vercel.app/services')
         },
         {
           path: '/service/:id',
           loader: async ({ params }) => {
-            return fetch(`http://localhost:5000/service/${params.id}`);
+            return fetch(`https://crimson-review-server.vercel.app/service/${params.id}`);
           },
           element: <ServiceDetails></ServiceDetails>
         },
         {
           path: '/allreviews',
-          loader: () => fetch('http://localhost:5000/services'),
+          loader: () => fetch('https://crimson-review-server.vercel.app/services'),
           element: <AllReviews></AllReviews>
         },
         { path: '/blog', element: <Blog></Blog> },
@@ -54,13 +54,13 @@ function App() {
         },
         {
           path: '/my_reviews',
-          loader: () => fetch('http://localhost:5000/reviews'),
+          loader: () => fetch('https://crimson-review-server.vercel.app/reviews'),
           element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
         },
         {
           path: '/update/:id',
           element: <Update></Update>,
-          loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.id}`)
+          loader: ({ params }) => fetch(`https://crimson-review-server.vercel.app/reviews/${params.id}`)
         },
         {
           path: '/add_service',

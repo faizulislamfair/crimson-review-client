@@ -13,7 +13,7 @@ const AllReviews = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews`)
+        fetch(`https://crimson-review-server.vercel.app/reviews`)
             .then(res => res.json())
             .then(data => setAllReviews(data))
     }, [])

@@ -12,7 +12,7 @@ const Update = () => {
         event.preventDefault();
         console.log(review);
 
-        fetch(`http://localhost:5000/reviews/${reviewed._id}`, {
+        fetch(`https://crimson-review-server.vercel.app/reviews/${reviewed._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
